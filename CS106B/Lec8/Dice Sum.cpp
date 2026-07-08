@@ -11,6 +11,7 @@ void dshelper(int dice, int sum, Vector<int>& v){
         for(int i=1;i<=6 && dice>0 && sum >0;i++){
             v.add(i); 
             dshelper(dice-1,sum-i,v);
+            // un-choosing **
             v.remove(v.size()-1);
         }
     }

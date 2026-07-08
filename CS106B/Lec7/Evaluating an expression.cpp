@@ -26,7 +26,6 @@ int evaluate(string s, int& i)
         //i++;
         return charToInteger(c);
     }
-
 }
 
 int main(){

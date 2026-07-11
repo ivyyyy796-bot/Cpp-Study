@@ -1,6 +1,5 @@
 string oChelper(string phrase, int i){
     i=0;
-    phrase=toUpperCase(phrase);
     string res;
     for (char x : phrase) {
         i++;
@@ -15,5 +14,6 @@ string oChelper(string phrase, int i){
 
 string onlyConnectize(string phrase) {
     int i=0;
+    phrase=toUpperCase(phrase);
     return oChelper(phrase, i);
 }

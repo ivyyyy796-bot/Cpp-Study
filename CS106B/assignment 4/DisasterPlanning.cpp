@@ -9,7 +9,7 @@ bool helper(const Map<string, Set<string>>& roadNetwork,
     if (covered.size() == total){
         return true;
     }
-    string s1;
+    string s1 = "";
     for(string s : uncovered){
         if(!supplyLocations.contains(s1)){
             s1 = s;

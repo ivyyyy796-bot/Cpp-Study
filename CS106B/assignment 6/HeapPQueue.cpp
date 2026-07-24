@@ -58,9 +58,13 @@ DataPoint HeapPQueue::dequeue() {
     DataPoint res = elems[1];
     elems[1] = elems[logicalSize];
     int n = 1;
-    while(2*n+1 <= logicalSize ){
+    while(2*n <= logicalSize){
         int c;
-        elems[2*n].weight < elems[2*n+1].weight? c = 2*n : c = 2*n+1;
+        if(2*n+1 <= logicalSize){
+            elems[2*n].weight < elems[2*n+1].weight? c = 2*n : c = 2*n+1;
+        }else{
+            c = 2*n;
+        }
         if(elems[n].weight > elems[c].weight){
             DataPoint child = elems[c];
             elems[c] = elems[n];
@@ -69,6 +73,9 @@ DataPoint HeapPQueue::dequeue() {
         }
         else break;
     }
+    logicalSize --;
+    return res;
+}
     logicalSize --;
     return res;
 }
